@@ -31,16 +31,16 @@ export default function Navbar() {
       transition: "box-shadow 0.3s",
       boxShadow: scrolled ? "0 2px 24px rgba(0,0,0,0.25)" : "none",
     }}>
-      <div className="wrap" style={{ height: 72, display: "flex", alignItems: "center", justifyContent: "space-between", gap: "2rem" }}>
+      <div className="wrap" style={{ height: 88, display: "flex", alignItems: "center", justifyContent: "space-between", gap: "2rem" }}>
 
         {/* Logo */}
         <Link href="/" style={{ display: "flex", alignItems: "center", flexShrink: 0 }}>
           <Image
             src={LOGO}
             alt="The Garage Daventry"
-            width={52}
-            height={52}
-            style={{ objectFit: "contain", height: 44, width: "auto" }}
+            width={160}
+            height={80}
+            style={{ objectFit: "contain", height: 60, width: "auto" }}
             priority
             unoptimized
           />
