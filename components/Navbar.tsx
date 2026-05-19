@@ -67,14 +67,6 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile phone number — visible in bar */}
-        <a href="tel:01327349181" className="nav-mobile-phone" style={{ color: "rgba(255,255,255,0.9)", fontSize: "0.875rem", fontWeight: 700, textDecoration: "none", flexShrink: 0, display: "flex", alignItems: "center", gap: "0.4rem" }}>
-          <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.05 1.22 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-          </svg>
-          01327 349181
-        </a>
-
         {/* Mobile toggle */}
         <button onClick={() => setOpen(o => !o)} className="nav-mobile-toggle" aria-label="Toggle menu"
           style={{ background: "none", border: "none", color: "#fff", cursor: "pointer", padding: "0.25rem", flexShrink: 0 }}>
@@ -90,30 +82,41 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
-      {open && (
-        <div style={{ background: "var(--brand-dark)", borderTop: "1px solid rgba(255,255,255,0.1)" }}>
-          {links.map(l => (
-            <Link key={l.href} href={l.href} onClick={() => setOpen(false)}
-              style={{ display: "block", padding: "1rem 1.25rem", color: "rgba(255,255,255,0.85)", fontSize: "0.95rem", fontWeight: 500, borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
-              {l.label}
-            </Link>
-          ))}
-          <div style={{ padding: "0.75rem 1.25rem", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
-            <a href="tel:01327349181" style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "rgba(255,255,255,0.7)", fontSize: "0.875rem", fontWeight: 500 }}>
-              <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.05 1.22 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-              </svg>
-              01327 349181
-            </a>
-          </div>
-          <div style={{ padding: "1rem 1.25rem" }}>
-            <Link href="/quote" className="btn btn-accent" style={{ display: "block", textAlign: "center" }} onClick={() => setOpen(false)}>
-              Get a Quote
-            </Link>
-          </div>
+      {/* Mobile menu — overlay, always rendered, animated */}
+      <div style={{
+        position: "absolute",
+        top: "100%",
+        left: 0,
+        right: 0,
+        background: "var(--brand-dark)",
+        borderTop: "1px solid rgba(255,255,255,0.1)",
+        boxShadow: "0 8px 32px rgba(0,0,0,0.3)",
+        opacity: open ? 1 : 0,
+        transform: open ? "translateY(0)" : "translateY(-10px)",
+        pointerEvents: open ? "auto" : "none",
+        transition: "opacity 0.28s ease, transform 0.28s cubic-bezier(0.22,1,0.36,1)",
+        zIndex: 99,
+      }}>
+        {links.map(l => (
+          <Link key={l.href} href={l.href} onClick={() => setOpen(false)}
+            style={{ display: "block", padding: "1rem 1.5rem", color: "rgba(255,255,255,0.85)", fontSize: "1rem", fontWeight: 500, borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
+            {l.label}
+          </Link>
+        ))}
+        <div style={{ padding: "1rem 1.5rem", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
+          <a href="tel:01327349181" style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "rgba(255,255,255,0.75)", fontSize: "0.9rem", fontWeight: 500 }}>
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.05 1.22 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+            01327 349181
+          </a>
         </div>
-      )}
+        <div style={{ padding: "1rem 1.5rem" }}>
+          <Link href="/quote" className="btn btn-accent" style={{ display: "block", textAlign: "center" }} onClick={() => setOpen(false)}>
+            Get a Quote
+          </Link>
+        </div>
+      </div>
 
       <style>{`
         .nav-link {
@@ -141,11 +144,9 @@ export default function Navbar() {
         @media (max-width: 768px) {
           .nav-desktop { display: none !important; }
           .nav-mobile-toggle { display: block !important; }
-          .nav-mobile-phone { display: block !important; }
         }
         @media (min-width: 769px) {
           .nav-mobile-toggle { display: none !important; }
-          .nav-mobile-phone { display: none !important; }
         }
       `}</style>
     </header>
