@@ -9,22 +9,28 @@ export const metadata: Metadata = {
 
 const team = [
   {
-    name: "Steve Harrison",
-    role: "Master Technician & Co-Founder",
-    bio: "30+ years in the trade. Specialises in classic vehicles, engine rebuilds and complex diagnostics. Steve has seen it all and fixes it properly.",
-    img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80",
+    name: "Hayley",
+    role: "Service Manager",
+    bio: "Hayley keeps the workshop running smoothly, coordinating bookings, liaising with customers, and making sure every job is delivered on time and to the highest standard.",
+    img: "/images/hayley.jpg",
   },
   {
-    name: "Paul Watts",
-    role: "Senior Mechanic & Co-Founder",
-    bio: "25+ years of experience across all makes and models. Paul leads our EV and hybrid servicing and holds advanced electrical qualifications.",
-    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&q=80",
+    name: "Bex",
+    role: "Service Receptionist",
+    bio: "Bex is usually the first voice you hear when you call. She handles bookings, keeps customers informed throughout, and ensures your visit is as straightforward as possible.",
+    img: "/images/bex.jpg",
   },
   {
-    name: "Liam Carter",
-    role: "MOT Tester & Service Technician",
-    bio: "DVSA-certified MOT tester with a background in fleet management. Fast, thorough and always straight with customers.",
-    img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&q=80",
+    name: "Connor",
+    role: "Vehicle Technician",
+    bio: "Connor is a fully qualified technician with hands-on experience across all makes and models — from routine servicing and MOTs to complex diagnostics and repairs.",
+    img: "/images/connor.jpg",
+  },
+  {
+    name: "Harvey",
+    role: "Apprentice Vehicle Technician",
+    bio: "Harvey is working his way through his apprenticeship alongside our senior technicians, building solid foundations in vehicle servicing, diagnostics and repair.",
+    img: "/images/harvey.jpg",
   },
 ];
 
@@ -100,7 +106,7 @@ export default function AboutPage() {
             <div className="eyebrow" data-anim="slide-left">The People Behind The Work</div>
             <h2 data-anim="fade-up" data-delay="0.1" style={{ color: "var(--dark)" }}>Meet the team</h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2rem" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "2rem" }}>
             {team.map((member, i) => (
               <div key={member.name} data-anim="fade-up" data-delay={`${i * 0.12}`}
                 style={{ borderRadius: "var(--radius)", overflow: "hidden", border: "1px solid var(--border)" }}>
