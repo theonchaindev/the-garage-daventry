@@ -23,7 +23,7 @@ export default function ContactPage() {
       {/* Main */}
       <section className="bg-white section">
         <div className="wrap">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.3fr", gap: "5rem" }}>
+          <div className="r-contact" style={{ display: "grid", gridTemplateColumns: "1fr 1.3fr", gap: "5rem" }}>
 
             {/* Info column */}
             <div>
@@ -69,7 +69,7 @@ export default function ContactPage() {
             <div>
               <h3 data-anim="fade-up" style={{ color: "var(--dark)", marginBottom: "2.5rem" }}>Send a Message</h3>
               <form data-anim="fade-up" data-delay="0.1" style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+                <div className="r-names" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
                   {["First Name", "Last Name"].map(f => (
                     <div key={f}>
                       <label style={{ display: "block", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--mid)", marginBottom: "0.5rem" }}>{f}</label>

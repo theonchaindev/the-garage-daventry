@@ -25,8 +25,8 @@ export default function Home() {
         <VideoBackground />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(160deg, rgba(0,58,115,0.82) 0%, rgba(0,42,85,0.9) 50%, rgba(0,0,0,0.85) 100%)" }} />
 
-        <div className="wrap" style={{ position: "relative", zIndex: 2, paddingTop: "6rem", paddingBottom: "6rem", width: "100%" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "flex-end" }}>
+        <div className="wrap r-hero-pad" style={{ position: "relative", zIndex: 2, paddingTop: "6rem", paddingBottom: "6rem", width: "100%" }}>
+          <div className="r-hero" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "flex-end" }}>
             <div>
               <div className="eyebrow eyebrow-white" data-anim="slide-left" data-delay="0" style={{ marginBottom: "1.5rem" }}>Daventry&apos;s Trusted Garage</div>
               <h1 data-anim="fade-up" data-delay="0.1" style={{ color: "#fff", marginBottom: "2rem" }}>
@@ -42,7 +42,7 @@ export default function Home() {
               <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "1.05rem", lineHeight: 1.8, maxWidth: "44ch" }}>
                 With a combined experience of over 55 years repairing motor cars, we have the technical know-how and correct tooling to service and repair your vehicle right first time.
               </p>
-              <div style={{ display: "flex", gap: "3rem", flexWrap: "wrap" }}>
+              <div className="r-stats" style={{ display: "flex", gap: "3rem", flexWrap: "wrap" }}>
                 {[["55+", "Years Experience"], ["5,000+", "Vehicles Serviced"], ["8", "Specialist Services"]].map(([num, label], i) => (
                   <div key={label} data-anim="fade-up" data-delay={`${0.3 + i * 0.1}`}>
                     <div style={{ fontSize: "2rem", fontWeight: 700, color: "var(--accent)", letterSpacing: "-0.04em", lineHeight: 1 }}>{num}</div>
@@ -58,7 +58,7 @@ export default function Home() {
       {/* ── ABOUT SNIPPET ── */}
       <section className="bg-white section">
         <div className="wrap">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center" }}>
+          <div className="r-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center" }}>
             <div data-anim="scale-in" style={{ position: "relative", aspectRatio: "4/3", borderRadius: "var(--radius)", overflow: "hidden" }}>
               <Image src="/images/site-img3.jpg"
                 alt="Mechanics at The Garage Daventry" fill unoptimized style={{ objectFit: "cover" }} />
@@ -99,7 +99,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem" }}>
+          <div className="r-3col" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem" }}>
             {services.map((s, i) => (
               <Link key={s.title} href="/services" data-anim="fade-up" data-delay={`${i * 0.08}`}
                 style={{ position: "relative", aspectRatio: "3/4", borderRadius: "var(--radius)", overflow: "hidden", display: "block" }}>
@@ -122,7 +122,7 @@ export default function Home() {
       {/* ── TRUST BANNER ── */}
       <section style={{ background: "var(--brand)", padding: "4rem 0" }}>
         <div className="wrap">
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "2rem", textAlign: "center" }}>
+          <div className="r-4col" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "2rem", textAlign: "center" }}>
             {[
               { icon: "✓", title: "DVSA Approved",  sub: "Official MOT testing station" },
               { icon: "⚡", title: "EV Specialists",  sub: "Trained in electric & hybrid vehicles" },
@@ -148,7 +148,7 @@ export default function Home() {
         <img src="/images/site-workshop.jpg"
           alt="Workshop" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 30%" }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(0,58,115,0.95) 0%, rgba(0,58,115,0.7) 60%, rgba(0,0,0,0.3) 100%)" }} />
-        <div className="wrap" style={{ position: "relative", zIndex: 2, width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "3rem", flexWrap: "wrap" }}>
+        <div className="wrap r-cta" style={{ position: "relative", zIndex: 2, width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "3rem", flexWrap: "wrap" }}>
           <div>
             <div className="eyebrow eyebrow-white" data-anim="slide-left">Get in Touch</div>
             <h2 data-anim="fade-up" data-delay="0.1" style={{ color: "#fff", maxWidth: "18ch", marginBottom: "0.75rem" }}>Quality parts. Honest pricing. Proper expertise.</h2>

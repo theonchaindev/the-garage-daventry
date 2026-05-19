@@ -31,7 +31,7 @@ export default function Navbar() {
       transition: "box-shadow 0.3s",
       boxShadow: scrolled ? "0 2px 24px rgba(0,0,0,0.25)" : "none",
     }}>
-      <div className="wrap" style={{ height: scrolled ? 72 : 120, display: "flex", alignItems: "center", justifyContent: "space-between", gap: "2rem", transition: "height 0.35s cubic-bezier(0.22,1,0.36,1)" }}>
+      <div className="wrap nav-wrap" style={{ height: scrolled ? 72 : 120, display: "flex", alignItems: "center", justifyContent: "space-between", gap: "2rem", transition: "height 0.35s cubic-bezier(0.22,1,0.36,1)" }}>
 
         {/* Logo */}
         <Link href="/" style={{ display: "flex", alignItems: "center", flexShrink: 0 }}>
@@ -40,6 +40,7 @@ export default function Navbar() {
             alt="The Garage Daventry"
             width={200}
             height={100}
+            className="nav-logo-img"
             style={{ objectFit: "contain", height: scrolled ? 46 : 100, width: "auto", transition: "height 0.35s cubic-bezier(0.22,1,0.36,1)" }}
             priority
             unoptimized

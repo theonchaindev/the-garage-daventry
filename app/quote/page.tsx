@@ -25,7 +25,7 @@ export default function QuotePage() {
       {/* Builder */}
       <section className="bg-cream section">
         <div className="wrap">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 360px", gap: "3.5rem", alignItems: "start" }}>
+          <div className="r-sidebar" style={{ display: "grid", gridTemplateColumns: "1fr 360px", gap: "3.5rem", alignItems: "start" }}>
 
             <div data-anim="fade-up" data-delay="0.05">
               <Suspense fallback={<div style={{ background: "#fff", borderRadius: "var(--radius)", padding: "2.5rem", minHeight: 400 }} />}>

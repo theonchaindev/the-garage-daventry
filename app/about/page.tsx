@@ -51,7 +51,7 @@ export default function AboutPage() {
       {/* Story */}
       <section className="bg-white section">
         <div className="wrap">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center" }}>
+          <div className="r-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center" }}>
             <div>
               <div className="eyebrow" data-anim="slide-left">Who We Are</div>
               <h2 data-anim="fade-up" data-delay="0.1" style={{ color: "var(--dark)", marginBottom: "1.5rem" }}>55+ years of combined experience</h2>
@@ -82,7 +82,7 @@ export default function AboutPage() {
       {/* Stats */}
       <section className="bg-cream section">
         <div className="wrap">
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "2rem" }}>
+          <div className="r-4col" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "2rem" }}>
             {[
               { num: "55+",    label: "Years combined experience" },
               { num: "5,000+", label: "Vehicles serviced" },
@@ -106,7 +106,7 @@ export default function AboutPage() {
             <div className="eyebrow" data-anim="slide-left">The People Behind The Work</div>
             <h2 data-anim="fade-up" data-delay="0.1" style={{ color: "var(--dark)" }}>Meet the team</h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "2rem" }}>
+          <div className="r-4col" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "2rem" }}>
             {team.map((member, i) => (
               <div key={member.name} data-anim="fade-up" data-delay={`${i * 0.12}`}
                 style={{ borderRadius: "var(--radius)", overflow: "hidden", border: "1px solid var(--border)" }}>
@@ -137,7 +137,7 @@ export default function AboutPage() {
             <div className="eyebrow" data-anim="slide-left">What We Stand For</div>
             <h2 data-anim="fade-up" data-delay="0.1" style={{ color: "var(--dark)" }}>Our values</h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "1.5rem" }}>
+          <div className="r-4col" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "1.5rem" }}>
             {[
               { title: "Transparency", desc: "We always explain what needs doing and why before any work starts. No surprise bills, no hidden charges." },
               { title: "Quality",      desc: "We use genuine OEM or quality-approved parts. You choose — we give you the options and honest advice." },
@@ -157,7 +157,7 @@ export default function AboutPage() {
 
       {/* CTA */}
       <section style={{ background: "var(--brand)", padding: "5rem 0" }}>
-        <div className="wrap" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "2rem" }}>
+        <div className="wrap r-cta" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "2rem" }}>
           <div>
             <div className="eyebrow eyebrow-white" data-anim="slide-left">Ready to Book?</div>
             <h2 data-anim="fade-up" data-delay="0.1" style={{ color: "#fff" }}>Get a free quote today</h2>

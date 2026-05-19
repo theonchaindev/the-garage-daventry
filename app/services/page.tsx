@@ -84,9 +84,9 @@ export default function ServicesPage() {
       <section className="bg-white">
         <div className="wrap">
           {services.map((s, i) => (
-            <div key={s.title} style={{ display: "grid", gridTemplateColumns: i % 2 === 0 ? "1fr 420px" : "420px 1fr", gap: "4rem", alignItems: "center", padding: "5rem 0", borderBottom: "1px solid var(--border)" }}>
+            <div key={s.title} className="r-svc-row" style={{ display: "grid", gridTemplateColumns: i % 2 === 0 ? "1fr 420px" : "420px 1fr", gap: "4rem", alignItems: "center", padding: "5rem 0", borderBottom: "1px solid var(--border)" }}>
               {i % 2 !== 0 && (
-                <div data-anim="scale-in" style={{ position: "relative", aspectRatio: "4/3", borderRadius: "var(--radius)", overflow: "hidden" }}>
+                <div data-anim="scale-in" className="r-svc-img" style={{ position: "relative", aspectRatio: "4/3", borderRadius: "var(--radius)", overflow: "hidden" }}>
                   <Image src={s.img} alt={s.title} fill unoptimized style={{ objectFit: "cover" }} />
                 </div>
               )}
@@ -111,7 +111,7 @@ export default function ServicesPage() {
                 </div>
               </div>
               {i % 2 === 0 && (
-                <div data-anim="scale-in" style={{ position: "relative", aspectRatio: "4/3", borderRadius: "var(--radius)", overflow: "hidden" }}>
+                <div data-anim="scale-in" className="r-svc-img" style={{ position: "relative", aspectRatio: "4/3", borderRadius: "var(--radius)", overflow: "hidden" }}>
                   <Image src={s.img} alt={s.title} fill unoptimized style={{ objectFit: "cover" }} />
                 </div>
               )}
@@ -122,7 +122,7 @@ export default function ServicesPage() {
 
       {/* CTA */}
       <section style={{ background: "var(--brand)", padding: "5rem 0" }}>
-        <div className="wrap" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "2rem" }}>
+        <div className="wrap r-cta" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "2rem" }}>
           <div>
             <div className="eyebrow eyebrow-white" data-anim="slide-left">Not Sure?</div>
             <h2 data-anim="fade-up" data-delay="0.1" style={{ color: "#fff" }}>We&apos;re happy to advise</h2>

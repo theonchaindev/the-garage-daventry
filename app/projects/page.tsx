@@ -36,7 +36,7 @@ export default function ProjectsPage() {
       {/* Projects grid */}
       <section className="bg-white section">
         <div className="wrap">
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2rem" }}>
+          <div className="r-3col-1" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2rem" }}>
             {projects.map((p, i) => (
               <article key={p.title} data-anim="fade-up" data-delay={`${(i % 3) * 0.1}`}
                 style={{ borderRadius: "var(--radius)", overflow: "hidden", border: "1px solid var(--border)", display: "flex", flexDirection: "column" }}>

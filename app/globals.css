@@ -168,3 +168,53 @@ h6 { font-size: 0.875rem; font-weight: 600; line-height: 1.5; letter-spacing: 0.
 .bg-cream  { background: var(--cream); }
 .bg-light  { background: var(--light); }
 .bg-white  { background: var(--white); }
+
+/* ══════════════════════════════════════════
+   MOBILE RESPONSIVE  (768px and below)
+   ══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  :root { --section-y: 3rem; }
+
+  /* Navbar */
+  .nav-wrap     { height: 68px !important; }
+  .nav-logo-img { height: 40px !important; width: auto !important; }
+
+  /* Hero grid → single column */
+  .r-hero     { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  .r-hero-pad { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+
+  /* 2-col grids → single column */
+  .r-2col { grid-template-columns: 1fr !important; gap: 2rem !important; }
+
+  /* 3-col grids → 1-col (service cards stay 1-col, nice tall cards) */
+  .r-3col { grid-template-columns: 1fr !important; gap: 1.25rem !important; }
+
+  /* 3-col projects grid → 1-col */
+  .r-3col-1 { grid-template-columns: 1fr !important; gap: 1.25rem !important; }
+
+  /* 4-col grids → 2-col */
+  .r-4col { grid-template-columns: 1fr 1fr !important; gap: 1.25rem !important; }
+
+  /* Sidebar (quote page) → single column */
+  .r-sidebar { grid-template-columns: 1fr !important; gap: 2rem !important; }
+
+  /* Contact page grids */
+  .r-contact { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+  .r-names   { grid-template-columns: 1fr !important; gap: 1rem !important; }
+
+  /* Services page: alternating rows → stacked, image always on top */
+  .r-svc-row { grid-template-columns: 1fr !important; gap: 0 !important; padding: 2.5rem 0 !important; }
+  .r-svc-img { order: -1 !important; margin-bottom: 1.75rem !important; }
+
+  /* CTA flex rows (space-between) → stacked */
+  .r-cta { flex-direction: column !important; align-items: flex-start !important; gap: 1.5rem !important; }
+
+  /* Reduce large inline gaps/padding in hero stats row */
+  .r-stats { gap: 1.5rem 2rem !important; flex-wrap: wrap !important; }
+}
+
+/* Very small screens (< 480px) */
+@media (max-width: 480px) {
+  .r-4col { grid-template-columns: 1fr 1fr !important; }
+  h4 { font-size: 1.15rem; }
+}
