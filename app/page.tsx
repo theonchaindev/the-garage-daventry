@@ -9,12 +9,12 @@ export const metadata: Metadata = {
 };
 
 const services = [
-  { num: "01", title: "MOTs",            desc: "DVSA-approved MOT testing for all vehicle classes.", img: "https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=600&q=75" },
-  { num: "02", title: "Servicing",       desc: "Interim and full vehicle services, all makes and models.", img: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=600&q=75" },
-  { num: "03", title: "EV & Hybrid",     desc: "Specialist electric and hybrid vehicle care.", img: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=600&q=75" },
-  { num: "04", title: "Diagnostics",     desc: "Bosch and Snap-On equipment — fast, accurate fault finding.", img: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&q=75" },
-  { num: "05", title: "Brake Repairs",   desc: "Pads, discs, callipers and fluid for all vehicles.", img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75" },
-  { num: "06", title: "Air Conditioning",desc: "Re-gas, leak testing and full AC system service.", img: "https://images.unsplash.com/photo-1546522571-26c9a37a6b35?w=600&q=75" },
+  { num: "01", title: "MOTs",            desc: "DVSA-approved MOT testing for all vehicle classes.", img: "/images/mot.jpg" },
+  { num: "02", title: "Servicing",       desc: "Interim and full vehicle services, all makes and models.", img: "/images/servicing.jpg" },
+  { num: "03", title: "EV & Hybrid",     desc: "Specialist electric and hybrid vehicle care.", img: "/images/ev.jpg" },
+  { num: "04", title: "Diagnostics",     desc: "Bosch and Snap-On equipment — fast, accurate fault finding.", img: "/images/diagnostics.jpg" },
+  { num: "05", title: "Brake Repairs",   desc: "Pads, discs, callipers and fluid for all vehicles.", img: "/images/brakes.jpg" },
+  { num: "06", title: "Air Conditioning",desc: "Re-gas, leak testing and full AC system service.", img: "/images/ac.jpg" },
 ];
 
 export default function Home() {
@@ -60,7 +60,7 @@ export default function Home() {
         <div className="wrap">
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center" }}>
             <div data-anim="scale-in" style={{ position: "relative", aspectRatio: "4/3", borderRadius: "var(--radius)", overflow: "hidden" }}>
-              <Image src="https://images.unsplash.com/photo-1580983704761-3c51b8e63ef0?w=900&q=75"
+              <Image src="/images/about.jpg"
                 alt="Mechanics at The Garage Daventry" fill unoptimized style={{ objectFit: "cover" }} />
               <div style={{ position: "absolute", bottom: "1.5rem", left: "1.5rem", background: "var(--brand)", color: "#fff", padding: "1rem 1.5rem", borderRadius: "0.5rem" }}>
                 <div style={{ fontSize: "2rem", fontWeight: 700, letterSpacing: "-0.04em", lineHeight: 1, color: "var(--accent)" }}>55+</div>
@@ -145,7 +145,7 @@ export default function Home() {
       {/* ── QUOTE CTA STRIP ── */}
       <section style={{ position: "relative", minHeight: 420, display: "flex", alignItems: "center", overflow: "hidden" }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1920&q=60"
+        <img src="/images/workshop.jpg"
           alt="Workshop" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 30%" }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(0,58,115,0.95) 0%, rgba(0,58,115,0.7) 60%, rgba(0,0,0,0.3) 100%)" }} />
         <div className="wrap" style={{ position: "relative", zIndex: 2, width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "3rem", flexWrap: "wrap" }}>
