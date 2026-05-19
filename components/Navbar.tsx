@@ -67,6 +67,11 @@ export default function Navbar() {
           </Link>
         </div>
 
+        {/* Mobile phone number — visible in bar */}
+        <a href="tel:01327349181" className="nav-mobile-phone" style={{ color: "rgba(255,255,255,0.9)", fontSize: "0.875rem", fontWeight: 700, textDecoration: "none", flexShrink: 0 }}>
+          01327 349181
+        </a>
+
         {/* Mobile toggle */}
         <button onClick={() => setOpen(o => !o)} className="nav-mobile-toggle" aria-label="Toggle menu"
           style={{ background: "none", border: "none", color: "#fff", cursor: "pointer", padding: "0.25rem", flexShrink: 0 }}>
@@ -133,9 +138,11 @@ export default function Navbar() {
         @media (max-width: 768px) {
           .nav-desktop { display: none !important; }
           .nav-mobile-toggle { display: block !important; }
+          .nav-mobile-phone { display: block !important; }
         }
         @media (min-width: 769px) {
           .nav-mobile-toggle { display: none !important; }
+          .nav-mobile-phone { display: none !important; }
         }
       `}</style>
     </header>
