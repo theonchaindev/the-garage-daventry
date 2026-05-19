@@ -9,12 +9,12 @@ export const metadata: Metadata = {
 };
 
 const services = [
-  { num: "01", title: "MOTs",            desc: "DVSA-approved MOT testing for all vehicle classes.", img: "https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=600&q=80" },
-  { num: "02", title: "Servicing",       desc: "Interim and full vehicle services, all makes and models.", img: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=600&q=80" },
-  { num: "03", title: "EV & Hybrid",     desc: "Specialist electric and hybrid vehicle care.", img: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=600&q=80" },
-  { num: "04", title: "Diagnostics",     desc: "Bosch and Snap-On equipment — fast, accurate fault finding.", img: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=600&q=80" },
-  { num: "05", title: "Brake Repairs",   desc: "Pads, discs, callipers and fluid for all vehicles.", img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80" },
-  { num: "06", title: "Air Conditioning",desc: "Re-gas, leak testing and full AC system service.", img: "https://images.unsplash.com/photo-1546522571-26c9a37a6b35?auto=format&fit=crop&w=600&q=80" },
+  { num: "01", title: "MOTs",            desc: "DVSA-approved MOT testing for all vehicle classes.", img: "https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=600&q=75" },
+  { num: "02", title: "Servicing",       desc: "Interim and full vehicle services, all makes and models.", img: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=600&q=75" },
+  { num: "03", title: "EV & Hybrid",     desc: "Specialist electric and hybrid vehicle care.", img: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=600&q=75" },
+  { num: "04", title: "Diagnostics",     desc: "Bosch and Snap-On equipment — fast, accurate fault finding.", img: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&q=75" },
+  { num: "05", title: "Brake Repairs",   desc: "Pads, discs, callipers and fluid for all vehicles.", img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75" },
+  { num: "06", title: "Air Conditioning",desc: "Re-gas, leak testing and full AC system service.", img: "https://images.unsplash.com/photo-1546522571-26c9a37a6b35?w=600&q=75" },
 ];
 
 export default function Home() {
@@ -103,7 +103,8 @@ export default function Home() {
             {services.map((s, i) => (
               <Link key={s.title} href="/services" data-anim="fade-up" data-delay={`${i * 0.08}`}
                 style={{ position: "relative", aspectRatio: "3/4", borderRadius: "var(--radius)", overflow: "hidden", display: "block" }}>
-                <Image src={s.img} alt={s.title} fill unoptimized style={{ objectFit: "cover" }} />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={s.img} alt={s.title} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
                 <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 50%, transparent 100%)" }} />
                 <div style={{ position: "absolute", inset: 0, padding: "1.5rem", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                   <div style={{ fontSize: "0.65rem", fontWeight: 700, color: "var(--accent)", letterSpacing: "0.12em", textTransform: "uppercase" }}>{s.num}</div>
@@ -143,8 +144,9 @@ export default function Home() {
 
       {/* ── QUOTE CTA STRIP ── */}
       <section style={{ position: "relative", minHeight: 420, display: "flex", alignItems: "center", overflow: "hidden" }}>
-        <Image src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1920&q=60"
-          alt="Workshop" fill unoptimized style={{ objectFit: "cover", objectPosition: "center 30%" }} />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1920&q=60"
+          alt="Workshop" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 30%" }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(0,58,115,0.95) 0%, rgba(0,58,115,0.7) 60%, rgba(0,0,0,0.3) 100%)" }} />
         <div className="wrap" style={{ position: "relative", zIndex: 2, width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "3rem", flexWrap: "wrap" }}>
           <div>
