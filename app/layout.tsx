@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Preloader from "@/components/Preloader";
 import AnimateObserver from "@/components/AnimateObserver";
+import FloatingMOT from "@/components/FloatingMOT";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Preloader />
         <AnimateObserver />
+        <FloatingMOT />
         <Navbar />
         <main>{children}</main>
         <Footer />

@@ -21,9 +21,17 @@ export default function Home() {
     <>
       {/* ── HERO ── */}
       <section style={{ position: "relative", minHeight: "90vh", display: "flex", alignItems: "flex-end", overflow: "hidden" }}>
-        <Image src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1920&q=80"
-          alt="The Garage Daventry workshop" fill priority unoptimized
-          style={{ objectFit: "cover", objectPosition: "center 40%" }} />
+        {/* Video background — replace src with your own footage */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1920&q=80"
+          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 40%" }}
+        >
+          <source src="https://cdn.coverr.co/videos/coverr-a-mechanic-working-on-car-8271/720p.mp4" type="video/mp4" />
+        </video>
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(160deg, rgba(0,58,115,0.82) 0%, rgba(0,42,85,0.9) 50%, rgba(0,0,0,0.85) 100%)" }} />
 
         <div className="wrap" style={{ position: "relative", zIndex: 2, paddingTop: "6rem", paddingBottom: "6rem", width: "100%" }}>
