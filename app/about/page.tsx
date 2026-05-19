@@ -4,35 +4,8 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "About | The Garage Daventry",
-  description: "Over 55 years of combined experience. Meet the team behind The Garage Daventry.",
+  description: "Over 55 years of combined experience. The Garage Daventry — family-run, independent workshop.",
 };
-
-const team = [
-  {
-    name: "Hayley",
-    role: "Service Manager",
-    bio: "Hayley keeps the workshop running smoothly, coordinating bookings, liaising with customers, and making sure every job is delivered on time and to the highest standard.",
-    img: "/images/hayley.jpg",
-  },
-  {
-    name: "Bex",
-    role: "Service Receptionist",
-    bio: "Bex is usually the first voice you hear when you call. She handles bookings, keeps customers informed throughout, and ensures your visit is as straightforward as possible.",
-    img: "/images/bex.jpg",
-  },
-  {
-    name: "Connor",
-    role: "Vehicle Technician",
-    bio: "Connor is a fully qualified technician with hands-on experience across all makes and models — from routine servicing and MOTs to complex diagnostics and repairs.",
-    img: "/images/connor.jpg",
-  },
-  {
-    name: "Harvey",
-    role: "Apprentice Vehicle Technician",
-    bio: "Harvey is working his way through his apprenticeship alongside our senior technicians, building solid foundations in vehicle servicing, diagnostics and repair.",
-    img: "/images/harvey.jpg",
-  },
-];
 
 export default function AboutPage() {
   return (
@@ -99,37 +72,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="bg-white section">
-        <div className="wrap">
-          <div style={{ marginBottom: "3.5rem" }}>
-            <div className="eyebrow" data-anim="slide-left">The People Behind The Work</div>
-            <h2 data-anim="fade-up" data-delay="0.1" style={{ color: "var(--dark)" }}>Meet the team</h2>
-          </div>
-          <div className="r-4col" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "2rem" }}>
-            {team.map((member, i) => (
-              <div key={member.name} data-anim="fade-up" data-delay={`${i * 0.12}`}
-                style={{ borderRadius: "var(--radius)", overflow: "hidden", border: "1px solid var(--border)" }}>
-                <div style={{ position: "relative", aspectRatio: "1/1", overflow: "hidden" }}>
-                  <Image
-                    src={member.img}
-                    alt={member.name}
-                    fill unoptimized
-                    style={{ objectFit: "cover", objectPosition: "top" }}
-                  />
-                  <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,58,115,0.6) 0%, transparent 55%)" }} />
-                </div>
-                <div style={{ padding: "1.5rem" }}>
-                  <div style={{ fontSize: "0.65rem", fontWeight: 700, color: "var(--accent)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "0.4rem" }}>{member.role}</div>
-                  <h4 style={{ color: "var(--dark)", marginBottom: "0.75rem" }}>{member.name}</h4>
-                  <p style={{ color: "var(--mid)", fontSize: "0.875rem", lineHeight: 1.7 }}>{member.bio}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Values */}
       <section className="bg-cream section">
         <div className="wrap">
@@ -163,7 +105,7 @@ export default function AboutPage() {
             <h2 data-anim="fade-up" data-delay="0.1" style={{ color: "#fff" }}>Get a free quote today</h2>
           </div>
           <div data-anim="fade-up" data-delay="0.2" style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-            <Link href="/quote" className="btn btn-accent">Get a Quote</Link>
+            <Link href="/contact" className="btn btn-accent">Get in Touch</Link>
             <a href="tel:01327349181" className="btn btn-outline-white">01327 349181</a>
           </div>
         </div>

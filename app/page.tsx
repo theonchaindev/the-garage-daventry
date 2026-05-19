@@ -33,7 +33,7 @@ export default function Home() {
                 The Garage<br /><span style={{ color: "var(--accent)" }}>Daventry</span>
               </h1>
               <div data-anim="fade-up" data-delay="0.25" style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-                <Link href="/quote" className="btn btn-accent">Get a Free Quote</Link>
+                <Link href="/contact" className="btn btn-accent">Contact Us</Link>
                 <Link href="/services" className="btn btn-outline-white">Our Services</Link>
               </div>
             </div>

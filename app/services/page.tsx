@@ -102,12 +102,8 @@ export default function ServicesPage() {
                     </li>
                   ))}
                 </ul>
-                <div data-anim="fade-up" data-delay="0.2" style={{ display: "flex", alignItems: "center", gap: "2rem", marginTop: "0.5rem" }}>
-                  <div>
-                    <div style={{ fontSize: "0.7rem", color: "var(--mid)", textTransform: "uppercase", letterSpacing: "0.08em" }}>Starting from</div>
-                    <div style={{ fontSize: "1.75rem", fontWeight: 700, color: "var(--brand)", letterSpacing: "-0.04em" }}>{s.from}</div>
-                  </div>
-                  <Link href="/quote" className="btn btn-accent">Get a Quote</Link>
+                <div data-anim="fade-up" data-delay="0.2" style={{ marginTop: "0.5rem" }}>
+                  <Link href="/contact" className="btn btn-accent">Get in Touch</Link>
                 </div>
               </div>
               {i % 2 === 0 && (

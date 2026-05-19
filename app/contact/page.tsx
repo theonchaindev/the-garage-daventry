@@ -61,7 +61,7 @@ export default function ContactPage() {
               </div>
 
               <div data-anim="fade-up" data-delay="0.4">
-                <Link href="/quote" className="btn btn-accent">Get a Free Quote</Link>
+                <Link href="/contact" className="btn btn-accent">Get in Touch</Link>
               </div>
             </div>
 

@@ -62,8 +62,8 @@ export default function Navbar() {
             </svg>
             01327 349181
           </a>
-          <Link href="/quote" className="btn btn-accent" style={{ padding: "0.5rem 1.25rem", fontSize: "0.82rem" }}>
-            Get a Quote
+          <Link href="/contact" className="btn btn-accent" style={{ padding: "0.5rem 1.25rem", fontSize: "0.82rem" }}>
+            Contact Us
           </Link>
         </div>
 
@@ -112,8 +112,8 @@ export default function Navbar() {
           </a>
         </div>
         <div style={{ padding: "1rem 1.5rem" }}>
-          <Link href="/quote" className="btn btn-accent" style={{ display: "block", textAlign: "center" }} onClick={() => setOpen(false)}>
-            Get a Quote
+          <Link href="/contact" className="btn btn-accent" style={{ display: "block", textAlign: "center" }} onClick={() => setOpen(false)}>
+            Contact Us
           </Link>
         </div>
       </div>

@@ -66,7 +66,7 @@ export default function ProjectsPage() {
             Get a free quote online or give us a call — we&apos;ll get you booked in at a time that suits you.
           </p>
           <div data-anim="fade-up" data-delay="0.25" style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
-            <Link href="/quote" className="btn btn-accent">Get a Quote</Link>
+            <Link href="/contact" className="btn btn-accent">Get in Touch</Link>
             <a href="tel:01327349181" className="btn btn-outline">01327 349181</a>
           </div>
         </div>

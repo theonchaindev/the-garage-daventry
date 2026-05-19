@@ -1,8 +1,7 @@
 "use client";
-import Link from "next/link";
 import { useState, useEffect } from "react";
 
-export default function FloatingMOT() {
+export default function FloatingCall() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -11,8 +10,8 @@ export default function FloatingMOT() {
   }, []);
 
   return (
-    <Link
-      href="/quote?service=mot"
+    <a
+      href="tel:01327349181"
       style={{
         position: "fixed",
         bottom: "1.75rem",
@@ -47,9 +46,9 @@ export default function FloatingMOT() {
       }}
     >
       <svg width="17" height="17" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
-        <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622C17.176 19.29 21 14.591 21 9c0-1.042-.133-2.052-.382-3.016z"/>
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.05 1.22 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
       </svg>
-      Book an MOT
-    </Link>
+      01327 349181
+    </a>
   );
 }
