@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import VideoBackground from "@/components/VideoBackground";
 
 export const metadata: Metadata = {
   title: "The Garage Daventry | Expert Car Mechanics",
@@ -8,12 +9,12 @@ export const metadata: Metadata = {
 };
 
 const services = [
-  { num: "01", title: "MOTs",            desc: "DVSA-approved MOT testing for all vehicle classes.", img: "https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=600&q=70" },
-  { num: "02", title: "Servicing",       desc: "Interim and full vehicle services, all makes and models.", img: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=600&q=70" },
-  { num: "03", title: "EV & Hybrid",     desc: "Specialist electric and hybrid vehicle care.", img: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=600&q=70" },
-  { num: "04", title: "Diagnostics",     desc: "Bosch and Snap-On equipment — fast, accurate fault finding.", img: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&q=70" },
-  { num: "05", title: "Brake Repairs",   desc: "Pads, discs, callipers and fluid for all vehicles.", img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=70" },
-  { num: "06", title: "Air Conditioning",desc: "Re-gas, leak testing and full AC system service.", img: "https://images.unsplash.com/photo-1546522571-26c9a37a6b35?w=600&q=70" },
+  { num: "01", title: "MOTs",            desc: "DVSA-approved MOT testing for all vehicle classes.", img: "https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=600&q=80" },
+  { num: "02", title: "Servicing",       desc: "Interim and full vehicle services, all makes and models.", img: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=600&q=80" },
+  { num: "03", title: "EV & Hybrid",     desc: "Specialist electric and hybrid vehicle care.", img: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=600&q=80" },
+  { num: "04", title: "Diagnostics",     desc: "Bosch and Snap-On equipment — fast, accurate fault finding.", img: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=600&q=80" },
+  { num: "05", title: "Brake Repairs",   desc: "Pads, discs, callipers and fluid for all vehicles.", img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80" },
+  { num: "06", title: "Air Conditioning",desc: "Re-gas, leak testing and full AC system service.", img: "https://images.unsplash.com/photo-1546522571-26c9a37a6b35?auto=format&fit=crop&w=600&q=80" },
 ];
 
 export default function Home() {
@@ -21,17 +22,7 @@ export default function Home() {
     <>
       {/* ── HERO ── */}
       <section style={{ position: "relative", minHeight: "90vh", display: "flex", alignItems: "flex-end", overflow: "hidden" }}>
-        {/* Video background — replace src with your own footage */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1920&q=80"
-          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 40%" }}
-        >
-          <source src="https://cdn.coverr.co/videos/coverr-a-mechanic-working-on-car-8271/720p.mp4" type="video/mp4" />
-        </video>
+        <VideoBackground />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(160deg, rgba(0,58,115,0.82) 0%, rgba(0,42,85,0.9) 50%, rgba(0,0,0,0.85) 100%)" }} />
 
         <div className="wrap" style={{ position: "relative", zIndex: 2, paddingTop: "6rem", paddingBottom: "6rem", width: "100%" }}>

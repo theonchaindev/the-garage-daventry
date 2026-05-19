@@ -7,6 +7,27 @@ export const metadata: Metadata = {
   description: "Over 55 years of combined experience. Meet the team behind The Garage Daventry.",
 };
 
+const team = [
+  {
+    name: "Steve Harrison",
+    role: "Master Technician & Co-Founder",
+    bio: "30+ years in the trade. Specialises in classic vehicles, engine rebuilds and complex diagnostics. Steve has seen it all and fixes it properly.",
+    img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80",
+  },
+  {
+    name: "Paul Watts",
+    role: "Senior Mechanic & Co-Founder",
+    bio: "25+ years of experience across all makes and models. Paul leads our EV and hybrid servicing and holds advanced electrical qualifications.",
+    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&q=80",
+  },
+  {
+    name: "Liam Carter",
+    role: "MOT Tester & Service Technician",
+    bio: "DVSA-certified MOT tester with a background in fleet management. Fast, thorough and always straight with customers.",
+    img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&q=80",
+  },
+];
+
 export default function AboutPage() {
   return (
     <>
@@ -42,7 +63,11 @@ export default function AboutPage() {
               </div>
             </div>
             <div data-anim="scale-in" data-delay="0.1" style={{ position: "relative", aspectRatio: "4/3", borderRadius: "var(--radius)", overflow: "hidden" }}>
-              <Image src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=900&q=75" alt="Inside The Garage Daventry" fill unoptimized style={{ objectFit: "cover" }} />
+              <Image
+                src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=900&q=80"
+                alt="Inside The Garage Daventry"
+                fill unoptimized style={{ objectFit: "cover" }}
+              />
             </div>
           </div>
         </div>
@@ -53,10 +78,10 @@ export default function AboutPage() {
         <div className="wrap">
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "2rem" }}>
             {[
-              { num: "55+",  label: "Years combined experience" },
+              { num: "55+",    label: "Years combined experience" },
               { num: "5,000+", label: "Vehicles serviced" },
-              { num: "2022", label: "Relocated to High March" },
-              { num: "DVSA", label: "Approved MOT station" },
+              { num: "2022",   label: "Relocated to High March" },
+              { num: "DVSA",   label: "Approved MOT station" },
             ].map((s, i) => (
               <div key={s.label} data-anim="fade-up" data-delay={`${i * 0.1}`}
                 style={{ padding: "2rem", background: "#fff", borderRadius: "var(--radius)", borderTop: "3px solid var(--accent)" }}>
@@ -68,8 +93,39 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Values */}
+      {/* Team */}
       <section className="bg-white section">
+        <div className="wrap">
+          <div style={{ marginBottom: "3.5rem" }}>
+            <div className="eyebrow" data-anim="slide-left">The People Behind The Work</div>
+            <h2 data-anim="fade-up" data-delay="0.1" style={{ color: "var(--dark)" }}>Meet the team</h2>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2rem" }}>
+            {team.map((member, i) => (
+              <div key={member.name} data-anim="fade-up" data-delay={`${i * 0.12}`}
+                style={{ borderRadius: "var(--radius)", overflow: "hidden", border: "1px solid var(--border)" }}>
+                <div style={{ position: "relative", aspectRatio: "1/1", overflow: "hidden" }}>
+                  <Image
+                    src={member.img}
+                    alt={member.name}
+                    fill unoptimized
+                    style={{ objectFit: "cover", objectPosition: "top" }}
+                  />
+                  <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,58,115,0.6) 0%, transparent 55%)" }} />
+                </div>
+                <div style={{ padding: "1.5rem" }}>
+                  <div style={{ fontSize: "0.65rem", fontWeight: 700, color: "var(--accent)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "0.4rem" }}>{member.role}</div>
+                  <h4 style={{ color: "var(--dark)", marginBottom: "0.75rem" }}>{member.name}</h4>
+                  <p style={{ color: "var(--mid)", fontSize: "0.875rem", lineHeight: 1.7 }}>{member.bio}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Values */}
+      <section className="bg-cream section">
         <div className="wrap">
           <div style={{ marginBottom: "3rem" }}>
             <div className="eyebrow" data-anim="slide-left">What We Stand For</div>
@@ -83,7 +139,7 @@ export default function AboutPage() {
               { title: "Fair Pricing", desc: "Independent garage pricing without the main dealer markup. Competitive rates with no compromise on quality." },
             ].map((v, i) => (
               <div key={v.title} data-anim="fade-up" data-delay={`${i * 0.1}`}
-                style={{ padding: "2rem", background: "var(--cream)", borderRadius: "var(--radius)" }}>
+                style={{ padding: "2rem", background: "#fff", borderRadius: "var(--radius)" }}>
                 <div style={{ width: "2.5rem", height: "3px", background: "var(--accent)", marginBottom: "1.5rem" }} />
                 <h5 style={{ color: "var(--dark)", marginBottom: "0.75rem" }}>{v.title}</h5>
                 <p style={{ color: "var(--mid)", fontSize: "0.875rem", lineHeight: 1.7 }}>{v.desc}</p>

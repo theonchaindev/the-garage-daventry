@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 
 const vehicles = [
@@ -69,9 +70,17 @@ const lbl: React.CSSProperties = {
 };
 
 export default function QuoteBuilder() {
+  const params = useSearchParams();
+  const preService = params.get("service") ?? "";
+
   const [step, setStep] = useState(0);
-  const [data, setData] = useState<Partial<F>>({});
+  const [data, setData] = useState<Partial<F>>(
+    preService ? { service: preService } : {}
+  );
   const [done, setDone] = useState(false);
+
+  // If a service was pre-selected via URL, show a banner on step 0
+  const hasPreService = Boolean(preService);
 
   const set = (k: keyof F, v: string) => setData(p => ({ ...p, [k]: v }));
   const price = calcPrice(data);
@@ -120,10 +129,19 @@ export default function QuoteBuilder() {
         <div>
           <p style={lbl}>Step 1 of 5</p>
           <h3 style={{ color: "var(--dark)", marginBottom: "0.5rem" }}>What type of vehicle?</h3>
+          {hasPreService && (
+            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "#eef4ff", border: "1px solid #c7d9ff", borderRadius: "0.375rem", padding: "0.6rem 0.875rem", marginBottom: "1rem", fontSize: "0.8rem", color: "var(--brand)", fontWeight: 500 }}>
+              ✓ {serviceList.find(s => s.id === preService)?.label ?? preService} already selected — just pick your vehicle type to continue.
+            </div>
+          )}
           <p style={{ color: "var(--mid)", fontSize: "0.875rem", marginBottom: "1.75rem" }}>This helps us give the most accurate estimate.</p>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem" }}>
             {vehicles.map(v => (
-              <button key={v.id} onClick={() => { set("vehicle", v.id); setStep(1); }} style={cardStyle(data.vehicle === v.id)}>
+              <button key={v.id} onClick={() => {
+                set("vehicle", v.id);
+                // Skip service step if service already pre-selected
+                setStep(hasPreService ? 2 : 1);
+              }} style={cardStyle(data.vehicle === v.id)}>
                 <div style={{ fontWeight: 600, color: "var(--dark)", fontSize: "0.95rem" }}>{v.label}</div>
                 <div style={{ color: "var(--mid)", fontSize: "0.8rem", marginTop: "0.2rem" }}>{v.sub}</div>
               </button>
@@ -175,7 +193,7 @@ export default function QuoteBuilder() {
               </button>
             ))}
           </div>
-          <button onClick={() => setStep(1)} style={{ marginTop: "1.25rem", background: "none", border: "none", color: "var(--mid)", fontSize: "0.85rem", cursor: "pointer" }}>← Back</button>
+          <button onClick={() => setStep(hasPreService ? 0 : 1)} style={{ marginTop: "1.25rem", background: "none", border: "none", color: "var(--mid)", fontSize: "0.85rem", cursor: "pointer" }}>← Back</button>
         </div>
       )}
 

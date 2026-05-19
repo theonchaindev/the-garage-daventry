@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Suspense } from "react";
 import QuoteBuilder from "@/components/QuoteBuilder";
 
 export const metadata: Metadata = {
@@ -27,7 +28,9 @@ export default function QuotePage() {
           <div style={{ display: "grid", gridTemplateColumns: "1fr 360px", gap: "3.5rem", alignItems: "start" }}>
 
             <div data-anim="fade-up" data-delay="0.05">
-              <QuoteBuilder />
+              <Suspense fallback={<div style={{ background: "#fff", borderRadius: "var(--radius)", padding: "2.5rem", minHeight: 400 }} />}>
+                <QuoteBuilder />
+              </Suspense>
             </div>
 
             {/* Sidebar */}
