@@ -176,8 +176,8 @@ h6 { font-size: 0.875rem; font-weight: 600; line-height: 1.5; letter-spacing: 0.
   :root { --section-y: 3rem; }
 
   /* Navbar */
-  .nav-wrap     { height: 68px !important; }
-  .nav-logo-img { height: 40px !important; width: auto !important; }
+  .nav-wrap     { height: 80px !important; }
+  .nav-logo-img { height: 58px !important; width: auto !important; }
 
   /* Hero grid → single column */
   .r-hero     { grid-template-columns: 1fr !important; gap: 2rem !important; }
