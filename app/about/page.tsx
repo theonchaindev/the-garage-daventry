@@ -70,7 +70,7 @@ export default function AboutPage() {
             </div>
             <div data-anim="scale-in" data-delay="0.1" style={{ position: "relative", aspectRatio: "4/3", borderRadius: "var(--radius)", overflow: "hidden" }}>
               <Image
-                src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=900&q=80"
+                src="/images/site-img3.jpg"
                 alt="Inside The Garage Daventry"
                 fill unoptimized style={{ objectFit: "cover" }}
               />

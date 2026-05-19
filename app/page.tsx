@@ -9,12 +9,12 @@ export const metadata: Metadata = {
 };
 
 const services = [
-  { num: "01", title: "MOTs",            desc: "DVSA-approved MOT testing for all vehicle classes.", img: "/images/mot.jpg" },
-  { num: "02", title: "Servicing",       desc: "Interim and full vehicle services, all makes and models.", img: "/images/servicing.jpg" },
-  { num: "03", title: "EV & Hybrid",     desc: "Specialist electric and hybrid vehicle care.", img: "/images/ev.jpg" },
-  { num: "04", title: "Diagnostics",     desc: "Bosch and Snap-On equipment — fast, accurate fault finding.", img: "/images/diagnostics.jpg" },
-  { num: "05", title: "Brake Repairs",   desc: "Pads, discs, callipers and fluid for all vehicles.", img: "/images/brakes.jpg" },
-  { num: "06", title: "Air Conditioning",desc: "Re-gas, leak testing and full AC system service.", img: "/images/ac.jpg" },
+  { num: "01", title: "MOTs",            desc: "DVSA-approved MOT testing for all vehicle classes.", img: "/images/site-img1.jpg" },
+  { num: "02", title: "Servicing",       desc: "Interim and full vehicle services, all makes and models.", img: "/images/site-servicing.jpg" },
+  { num: "03", title: "EV & Hybrid",     desc: "Specialist electric and hybrid vehicle care.", img: "/images/site-ev.jpg" },
+  { num: "04", title: "Diagnostics",     desc: "Bosch and Snap-On equipment — fast, accurate fault finding.", img: "/images/site-diagnostics.jpg" },
+  { num: "05", title: "Brake Repairs",   desc: "Pads, discs, callipers and fluid for all vehicles.", img: "/images/site-img2.jpg" },
+  { num: "06", title: "Air Conditioning",desc: "Re-gas, leak testing and full AC system service.", img: "/images/site-mechanic.jpg" },
 ];
 
 export default function Home() {
@@ -60,7 +60,7 @@ export default function Home() {
         <div className="wrap">
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center" }}>
             <div data-anim="scale-in" style={{ position: "relative", aspectRatio: "4/3", borderRadius: "var(--radius)", overflow: "hidden" }}>
-              <Image src="/images/about.jpg"
+              <Image src="/images/site-img3.jpg"
                 alt="Mechanics at The Garage Daventry" fill unoptimized style={{ objectFit: "cover" }} />
               <div style={{ position: "absolute", bottom: "1.5rem", left: "1.5rem", background: "var(--brand)", color: "#fff", padding: "1rem 1.5rem", borderRadius: "0.5rem" }}>
                 <div style={{ fontSize: "2rem", fontWeight: 700, letterSpacing: "-0.04em", lineHeight: 1, color: "var(--accent)" }}>55+</div>
@@ -145,7 +145,7 @@ export default function Home() {
       {/* ── QUOTE CTA STRIP ── */}
       <section style={{ position: "relative", minHeight: 420, display: "flex", alignItems: "center", overflow: "hidden" }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/workshop.jpg"
+        <img src="/images/site-workshop.jpg"
           alt="Workshop" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 30%" }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(0,58,115,0.95) 0%, rgba(0,58,115,0.7) 60%, rgba(0,0,0,0.3) 100%)" }} />
         <div className="wrap" style={{ position: "relative", zIndex: 2, width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "3rem", flexWrap: "wrap" }}>
