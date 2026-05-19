@@ -1,19 +1,27 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 
 export default function AnimateObserver() {
+  const pathname = usePathname();
+  const isFirst = useRef(true);
+
   useEffect(() => {
-    // Start observing just after the preloader finishes (1.9s)
-    const boot = setTimeout(() => {
-      const els = Array.from(document.querySelectorAll<HTMLElement>("[data-anim]"));
+    // First load: wait for preloader to finish. Subsequent navigations: near-instant.
+    const delay = isFirst.current ? 1950 : 80;
+    isFirst.current = false;
+
+    const timer = setTimeout(() => {
+      const els = Array.from(
+        document.querySelectorAll<HTMLElement>("[data-anim]:not(.anim-visible)")
+      );
 
       const io = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (!entry.isIntersecting) return;
             const el = entry.target as HTMLElement;
-            const delay = el.dataset.delay ?? "0";
-            el.style.setProperty("--anim-delay", `${delay}s`);
+            el.style.setProperty("--anim-delay", `${el.dataset.delay ?? "0"}s`);
             el.classList.add("anim-visible");
             io.unobserve(el);
           });
@@ -23,10 +31,10 @@ export default function AnimateObserver() {
 
       els.forEach((el) => io.observe(el));
       return () => io.disconnect();
-    }, 1950);
+    }, delay);
 
-    return () => clearTimeout(boot);
-  }, []);
+    return () => clearTimeout(timer);
+  }, [pathname]);
 
   return null;
 }
