@@ -64,8 +64,8 @@ export default function Footer() {
             <h6 style={{ color: "rgba(255,255,255,0.3)", marginBottom: "1.25rem" }}>Opening Hours</h6>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
               {[
-                { day: "Mon – Fri", hrs: "8:00 – 17:30" },
-                { day: "Saturday", hrs: "8:00 – 13:00" },
+                { day: "Mon – Fri", hrs: "8:30 – 17:00" },
+                { day: "Saturday", hrs: "Closed" },
                 { day: "Sunday", hrs: "Closed" },
               ].map(h => (
                 <div key={h.day} style={{ display: "flex", justifyContent: "space-between", gap: "1rem" }}>

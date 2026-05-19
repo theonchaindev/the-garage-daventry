@@ -30,7 +30,7 @@ export default function ContactPage() {
               <h3 data-anim="fade-up" style={{ color: "var(--dark)", marginBottom: "2.5rem" }}>Contact Information</h3>
 
               {[
-                { label: "Phone",   val: "01327 349181",             href: "tel:01327349181",                   sub: "Mon–Fri 8:00–17:30 · Sat 8:00–13:00" },
+                { label: "Phone",   val: "01327 349181",             href: "tel:01327349181",                   sub: "Mon–Fri 8:30–17:00" },
                 { label: "Email",   val: "info@thegaragedaventry.com", href: "mailto:info@thegaragedaventry.com", sub: "We aim to reply within 2 hours" },
                 { label: "Address", val: "High March, Daventry",     href: null as null,                        sub: "Northamptonshire, NN11" },
               ].map((item, i) => (
@@ -49,8 +49,8 @@ export default function ContactPage() {
               <div data-anim="fade-up" data-delay="0.35" style={{ background: "var(--cream)", borderRadius: "var(--radius)", padding: "1.75rem", marginBottom: "2rem" }}>
                 <h6 style={{ color: "var(--dark)", marginBottom: "1.25rem" }}>Opening Hours</h6>
                 {[
-                  { day: "Monday – Friday", hours: "8:00 – 17:30" },
-                  { day: "Saturday",        hours: "8:00 – 13:00" },
+                  { day: "Monday – Friday", hours: "8:30 – 17:00" },
+                  { day: "Saturday",        hours: "Closed" },
                   { day: "Sunday",          hours: "Closed" },
                 ].map(h => (
                   <div key={h.day} style={{ display: "flex", justifyContent: "space-between", padding: "0.625rem 0", borderBottom: "1px solid rgba(0,0,0,0.07)" }}>
