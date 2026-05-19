@@ -54,17 +54,6 @@ export default function Preloader() {
         </div>
       </div>
 
-      <style>{`
-        @keyframes preloader-logo {
-          from { opacity: 0; transform: scale(0.7) translateY(16px); }
-          to   { opacity: 1; transform: scale(1) translateY(0); }
-        }
-        @keyframes preloader-bar {
-          0%   { width: 0%; }
-          60%  { width: 75%; }
-          100% { width: 100%; }
-        }
-      `}</style>
     </>
   );
 }

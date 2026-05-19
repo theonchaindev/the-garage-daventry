@@ -13,9 +13,9 @@ export default function QuotePage() {
       {/* Hero */}
       <section style={{ background: "var(--brand)", paddingTop: "5rem", paddingBottom: "5rem" }}>
         <div className="wrap">
-          <div className="eyebrow eyebrow-white">Instant Estimate</div>
-          <h1 style={{ color: "#fff", marginBottom: "1.25rem" }}>Get a Free Quote</h1>
-          <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "1.05rem", maxWidth: "52ch", lineHeight: 1.75 }}>
+          <div className="eyebrow eyebrow-white" data-anim="slide-left">Instant Estimate</div>
+          <h1 data-anim="fade-up" data-delay="0.1" style={{ color: "#fff", marginBottom: "1.25rem" }}>Get a Free Quote</h1>
+          <p data-anim="fade-up" data-delay="0.2" style={{ color: "rgba(255,255,255,0.65)", fontSize: "1.05rem", maxWidth: "52ch", lineHeight: 1.75 }}>
             Answer a few quick questions about your vehicle and we&apos;ll give you a transparent price estimate — no hidden fees, no obligation.
           </p>
         </div>
@@ -26,11 +26,13 @@ export default function QuotePage() {
         <div className="wrap">
           <div style={{ display: "grid", gridTemplateColumns: "1fr 360px", gap: "3.5rem", alignItems: "start" }}>
 
-            <QuoteBuilder />
+            <div data-anim="fade-up" data-delay="0.05">
+              <QuoteBuilder />
+            </div>
 
             {/* Sidebar */}
             <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
-              <div style={{ background: "#fff", borderRadius: "var(--radius)", padding: "2rem" }}>
+              <div data-anim="fade-up" data-delay="0.15" style={{ background: "#fff", borderRadius: "var(--radius)", padding: "2rem" }}>
                 <h5 style={{ color: "var(--dark)", marginBottom: "1rem" }}>Why get a quote?</h5>
                 {[
                   "No obligation — just an honest estimate",
@@ -45,7 +47,7 @@ export default function QuotePage() {
                 ))}
               </div>
 
-              <div style={{ background: "var(--brand)", borderRadius: "var(--radius)", padding: "2rem", color: "#fff" }}>
+              <div data-anim="fade-up" data-delay="0.25" style={{ background: "var(--brand)", borderRadius: "var(--radius)", padding: "2rem", color: "#fff" }}>
                 <h6 style={{ marginBottom: "0.75rem", color: "#fff" }}>Prefer to call?</h6>
                 <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "0.875rem", marginBottom: "1.25rem", lineHeight: 1.6 }}>
                   Speak directly to one of our mechanics — Mon–Fri 8:00–17:30 · Sat 8:00–13:00.
@@ -53,12 +55,12 @@ export default function QuotePage() {
                 <a href="tel:01327349181" className="btn btn-white">01327 349181</a>
               </div>
 
-              <div style={{ background: "#fff", borderRadius: "var(--radius)", padding: "2rem" }}>
+              <div data-anim="fade-up" data-delay="0.35" style={{ background: "#fff", borderRadius: "var(--radius)", padding: "2rem" }}>
                 <h6 style={{ color: "var(--dark)", marginBottom: "1rem" }}>Opening Hours</h6>
                 {[
                   { day: "Mon – Fri", hrs: "8:00 – 17:30" },
-                  { day: "Saturday", hrs: "8:00 – 13:00" },
-                  { day: "Sunday", hrs: "Closed" },
+                  { day: "Saturday",  hrs: "8:00 – 13:00" },
+                  { day: "Sunday",    hrs: "Closed" },
                 ].map(h => (
                   <div key={h.day} style={{ display: "flex", justifyContent: "space-between", padding: "0.5rem 0", borderBottom: "1px solid var(--border)", fontSize: "0.875rem" }}>
                     <span style={{ color: "var(--mid)" }}>{h.day}</span>
@@ -67,7 +69,7 @@ export default function QuotePage() {
                 ))}
               </div>
 
-              <div style={{ background: "var(--cream)", borderRadius: "var(--radius)", padding: "1.5rem" }}>
+              <div data-anim="fade-in" data-delay="0.4" style={{ background: "var(--cream)", borderRadius: "var(--radius)", padding: "1.5rem" }}>
                 <p style={{ color: "var(--mid)", fontSize: "0.8rem", lineHeight: 1.6 }}>
                   Need something not listed? <Link href="/contact" style={{ color: "var(--brand)", fontWeight: 600 }}>Send us a message</Link> and we&apos;ll get back to you quickly.
                 </p>
