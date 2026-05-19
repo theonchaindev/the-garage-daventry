@@ -1,5 +1,8 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
+
+const LOGO = "https://cdn.prod.website-files.com/6688ffba727076417daf7a96/668903eb40456e66e929f36a_TheDaventryGarage%20Logo%20White.png";
 
 export default function Footer() {
   return (
@@ -10,19 +13,8 @@ export default function Footer() {
 
           {/* Brand col */}
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: "1.25rem" }}>
-              <div style={{ width: 36, height: 36, background: "var(--accent)", borderRadius: "0.25rem", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="3" y="3" width="7" height="7" rx="1"/>
-                  <rect x="14" y="3" width="7" height="7" rx="1"/>
-                  <rect x="14" y="14" width="7" height="7" rx="1"/>
-                  <rect x="3" y="14" width="7" height="7" rx="1"/>
-                </svg>
-              </div>
-              <div>
-                <div style={{ color: "#fff", fontWeight: 700, fontSize: "0.95rem", lineHeight: 1.1 }}>The Garage</div>
-                <div style={{ color: "rgba(255,255,255,0.45)", fontWeight: 500, fontSize: "0.7rem", letterSpacing: "0.08em", textTransform: "uppercase" }}>Daventry</div>
-              </div>
+            <div style={{ marginBottom: "1.25rem" }}>
+              <Image src={LOGO} alt="The Garage Daventry" width={120} height={60} style={{ objectFit: "contain", height: 50, width: "auto" }} unoptimized />
             </div>
             <p style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.85rem", lineHeight: 1.7, maxWidth: "28ch" }}>
               Expert mechanics with 55+ years of combined experience. Serving Daventry and the surrounding area.

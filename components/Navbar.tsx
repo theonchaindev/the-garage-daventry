@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import Image from "next/image";
+import { useState, useEffect } from "react";
 
 const links = [
   { href: "/services", label: "Services" },
@@ -9,62 +10,65 @@ const links = [
   { href: "/contact", label: "Contact" },
 ];
 
+const LOGO = "https://cdn.prod.website-files.com/6688ffba727076417daf7a96/668903eb40456e66e929f36a_TheDaventryGarage%20Logo%20White.png";
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handler = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handler, { passive: true });
+    return () => window.removeEventListener("scroll", handler);
+  }, []);
 
   return (
-    <header style={{ background: "var(--brand)", position: "sticky", top: 0, zIndex: 50, borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
-      <div className="wrap" style={{ height: 68, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+    <header style={{
+      background: "var(--brand)",
+      position: "sticky",
+      top: 0,
+      zIndex: 100,
+      transition: "box-shadow 0.3s",
+      boxShadow: scrolled ? "0 2px 24px rgba(0,0,0,0.25)" : "none",
+    }}>
+      <div className="wrap" style={{ height: 72, display: "flex", alignItems: "center", justifyContent: "space-between", gap: "2rem" }}>
 
         {/* Logo */}
-        <Link href="/" style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
-          <div style={{ width: 36, height: 36, background: "var(--accent)", borderRadius: "0.25rem", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
-              <path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/>
-              <path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
-              <path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/>
-              <path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/>
-              <path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/>
-              <path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/>
-              <path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/>
-              <path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/>
-            </svg>
-          </div>
-          <div>
-            <div style={{ color: "#fff", fontWeight: 700, fontSize: "0.95rem", lineHeight: 1.1 }}>The Garage</div>
-            <div style={{ color: "rgba(255,255,255,0.6)", fontWeight: 500, fontSize: "0.7rem", letterSpacing: "0.08em", textTransform: "uppercase" }}>Daventry</div>
-          </div>
+        <Link href="/" style={{ display: "flex", alignItems: "center", flexShrink: 0 }}>
+          <Image
+            src={LOGO}
+            alt="The Garage Daventry"
+            width={52}
+            height={52}
+            style={{ objectFit: "contain", height: 44, width: "auto" }}
+            priority
+            unoptimized
+          />
         </Link>
 
-        {/* Desktop nav */}
-        <nav style={{ display: "flex", alignItems: "center", gap: "2.5rem" }} className="hidden-mobile">
+        {/* Desktop nav links — centred */}
+        <nav style={{ display: "flex", alignItems: "center", gap: "2.25rem", flex: 1, justifyContent: "center" }} className="nav-desktop">
           {links.map(l => (
-            <Link key={l.href} href={l.href} style={{ color: "rgba(255,255,255,0.75)", fontSize: "0.875rem", fontWeight: 500, transition: "color 0.15s" }}
-              onMouseEnter={e => (e.currentTarget.style.color = "#fff")}
-              onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.75)")}
-            >
-              {l.label}
-            </Link>
+            <Link key={l.href} href={l.href} className="nav-link">{l.label}</Link>
           ))}
         </nav>
 
-        {/* Right */}
-        <div style={{ display: "flex", alignItems: "center", gap: "1rem" }} className="hidden-mobile">
-          <a href="tel:01327349181" style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.8rem", fontWeight: 500 }}>
+        {/* Right: phone + CTA */}
+        <div style={{ display: "flex", alignItems: "center", gap: "1.25rem", flexShrink: 0 }} className="nav-desktop">
+          <a href="tel:01327349181" style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "rgba(255,255,255,0.85)", fontSize: "0.875rem", fontWeight: 600, textDecoration: "none" }}>
+            <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.05 1.22 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+            </svg>
             01327 349181
           </a>
-          <Link href="/quote" className="btn btn-accent" style={{ padding: "0.5rem 1.25rem", fontSize: "0.8rem" }}>
+          <Link href="/quote" className="btn btn-accent" style={{ padding: "0.5rem 1.25rem", fontSize: "0.82rem" }}>
             Get a Quote
           </Link>
         </div>
 
         {/* Mobile toggle */}
-        <button
-          onClick={() => setOpen(o => !o)}
-          style={{ background: "none", border: "none", color: "#fff", cursor: "pointer", padding: "0.25rem", display: "none" }}
-          className="show-mobile"
-          aria-label="Toggle menu"
-        >
+        <button onClick={() => setOpen(o => !o)} className="nav-mobile-toggle" aria-label="Toggle menu"
+          style={{ background: "none", border: "none", color: "#fff", cursor: "pointer", padding: "0.25rem", flexShrink: 0 }}>
           {open ? (
             <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -86,6 +90,14 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
+          <div style={{ padding: "0.75rem 1.25rem", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
+            <a href="tel:01327349181" style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "rgba(255,255,255,0.7)", fontSize: "0.875rem", fontWeight: 500 }}>
+              <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.05 1.22 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+              01327 349181
+            </a>
+          </div>
           <div style={{ padding: "1rem 1.25rem" }}>
             <Link href="/quote" className="btn btn-accent" style={{ display: "block", textAlign: "center" }} onClick={() => setOpen(false)}>
               Get a Quote
@@ -95,9 +107,34 @@ export default function Navbar() {
       )}
 
       <style>{`
+        .nav-link {
+          color: rgba(255,255,255,0.75);
+          font-size: 0.875rem;
+          font-weight: 500;
+          text-decoration: none;
+          transition: color 0.15s;
+          position: relative;
+          padding-bottom: 2px;
+        }
+        .nav-link::after {
+          content: "";
+          position: absolute;
+          bottom: -2px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: var(--accent);
+          transition: width 0.25s ease;
+        }
+        .nav-link:hover { color: #fff; }
+        .nav-link:hover::after { width: 100%; }
+
         @media (max-width: 768px) {
-          .hidden-mobile { display: none !important; }
-          .show-mobile { display: block !important; }
+          .nav-desktop { display: none !important; }
+          .nav-mobile-toggle { display: block !important; }
+        }
+        @media (min-width: 769px) {
+          .nav-mobile-toggle { display: none !important; }
         }
       `}</style>
     </header>

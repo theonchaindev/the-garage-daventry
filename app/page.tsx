@@ -35,24 +35,24 @@ export default function Home() {
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "flex-end" }}>
 
             <div>
-              <div className="eyebrow eyebrow-white" style={{ marginBottom: "1.5rem" }}>Daventry&apos;s Trusted Garage</div>
-              <h1 style={{ color: "#fff", marginBottom: "2rem" }}>
+              <div className="eyebrow eyebrow-white anim-slide-right delay-2" style={{ marginBottom: "1.5rem" }}>Daventry&apos;s Trusted Garage</div>
+              <h1 className="anim-fade-up delay-3" style={{ color: "#fff", marginBottom: "2rem" }}>
                 The Garage<br />
                 <span style={{ color: "var(--accent)" }}>Daventry</span>
               </h1>
-              <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+              <div className="anim-fade-up delay-4" style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
                 <Link href="/quote" className="btn btn-accent">Get a Free Quote</Link>
                 <Link href="/services" className="btn btn-outline-white">Our Services</Link>
               </div>
             </div>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+            <div className="anim-fade-up delay-4" style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
               <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "1.05rem", lineHeight: 1.8, maxWidth: "44ch" }}>
                 With a combined experience of over 55 years repairing motor cars, we have the technical know-how and correct tooling to service and repair your vehicle right first time.
               </p>
               <div style={{ display: "flex", gap: "3rem", flexWrap: "wrap" }}>
-                {[["55+", "Years Experience"], ["5,000+", "Vehicles Serviced"], ["8", "Specialist Services"]].map(([num, label]) => (
-                  <div key={label}>
+                {[["55+", "Years Experience"], ["5,000+", "Vehicles Serviced"], ["8", "Specialist Services"]].map(([num, label], i) => (
+                  <div key={label} className={`anim-fade-up delay-${i + 4}`}>
                     <div style={{ fontSize: "2rem", fontWeight: 700, color: "var(--accent)", letterSpacing: "-0.04em", lineHeight: 1 }}>{num}</div>
                     <div style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.55)", marginTop: "0.25rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.06em" }}>{label}</div>
                   </div>
@@ -68,7 +68,7 @@ export default function Home() {
         <div className="wrap">
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center" }}>
 
-            <div style={{ position: "relative", aspectRatio: "4/3", borderRadius: "var(--radius)", overflow: "hidden" }}>
+            <div className="anim-scale-in" style={{ position: "relative", aspectRatio: "4/3", borderRadius: "var(--radius)", overflow: "hidden" }}>
               <Image
                 src="https://images.unsplash.com/photo-1580983704761-3c51b8e63ef0?w=900&q=75"
                 alt="Mechanics at The Garage Daventry"

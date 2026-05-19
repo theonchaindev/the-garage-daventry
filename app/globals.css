@@ -130,6 +130,36 @@ h6 { font-size: 0.875rem; font-weight: 600; line-height: 1.5; letter-spacing: 0.
 }
 .btn-white:hover { background: #f0f0f0; }
 
+/* ── Animations ── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slide-right {
+  from { opacity: 0; transform: translateX(-24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.anim-fade-up   { animation: fade-up    0.7s cubic-bezier(0.22,1,0.36,1) both; }
+.anim-fade-in   { animation: fade-in    0.6s ease both; }
+.anim-slide-right { animation: slide-right 0.65s cubic-bezier(0.22,1,0.36,1) both; }
+.anim-scale-in  { animation: scale-in   0.7s cubic-bezier(0.22,1,0.36,1) both; }
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.45s; }
+.delay-5 { animation-delay: 0.6s; }
+.delay-6 { animation-delay: 0.75s; }
+
 /* Backgrounds */
 .bg-brand  { background: var(--brand);  color: #fff; }
 .bg-dark   { background: var(--dark);   color: #fff; }
