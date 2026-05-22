@@ -102,7 +102,7 @@ export default function AboutPage() {
         <div className="wrap r-cta" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "2rem" }}>
           <div>
             <div className="eyebrow eyebrow-white" data-anim="slide-left">Ready to Book?</div>
-            <h2 data-anim="fade-up" data-delay="0.1" style={{ color: "#fff" }}>Get a free quote today</h2>
+            <h2 data-anim="fade-up" data-delay="0.1" style={{ color: "#fff" }}>Get in touch today</h2>
           </div>
           <div data-anim="fade-up" data-delay="0.2" style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
             <Link href="/contact" className="btn btn-accent">Get in Touch</Link>

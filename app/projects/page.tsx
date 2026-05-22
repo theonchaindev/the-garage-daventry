@@ -63,7 +63,7 @@ export default function ProjectsPage() {
           <div className="eyebrow" data-anim="fade-in" style={{ justifyContent: "center" }}>Book In</div>
           <h2 data-anim="fade-up" data-delay="0.1" style={{ color: "var(--dark)", marginBottom: "1rem" }}>Ready to bring your vehicle in?</h2>
           <p data-anim="fade-up" data-delay="0.15" style={{ color: "var(--mid)", maxWidth: "50ch", margin: "0 auto 2.5rem" }}>
-            Get a free quote online or give us a call — we&apos;ll get you booked in at a time that suits you.
+            Give us a call or send a message — we&apos;ll get you booked in at a time that suits you.
           </p>
           <div data-anim="fade-up" data-delay="0.25" style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
             <Link href="/contact" className="btn btn-accent">Get in Touch</Link>

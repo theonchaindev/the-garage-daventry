@@ -155,7 +155,7 @@ export default function Home() {
             <p data-anim="fade-up" data-delay="0.2" style={{ color: "rgba(255,255,255,0.65)", fontSize: "0.9rem" }}>Serving Daventry, Weedon, Flore, Crick &amp; surrounding areas</p>
           </div>
           <div data-anim="fade-up" data-delay="0.25" style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-            <Link href="/quote" className="btn btn-accent">Get a Free Quote</Link>
+            <Link href="/contact" className="btn btn-accent">Contact Us</Link>
             <a href="tel:01327349181" className="btn btn-outline-white">01327 349181</a>
           </div>
         </div>

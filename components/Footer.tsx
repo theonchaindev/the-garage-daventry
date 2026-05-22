@@ -48,7 +48,6 @@ export default function Footer() {
                 { href: "/about", label: "About Us" },
                 { href: "/projects", label: "Projects" },
                 { href: "/contact", label: "Contact" },
-                { href: "/quote", label: "Get a Quote" },
               ].map(l => (
                 <Link key={l.href} href={l.href} style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.85rem", transition: "color 0.15s" }}
                   onMouseEnter={e => (e.currentTarget.style.color = "#fff")}
