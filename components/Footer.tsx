@@ -14,7 +14,7 @@ export default function Footer() {
           {/* Brand col */}
           <div>
             <div style={{ marginBottom: "1.25rem" }}>
-              <Image src={LOGO} alt="The Garage Daventry" width={120} height={60} style={{ objectFit: "contain", height: 50, width: "auto" }} unoptimized />
+              <Image src={LOGO} alt="The Garage Daventry" width={200} height={100} style={{ objectFit: "contain", height: 88, width: "auto" }} unoptimized />
             </div>
             <p style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.85rem", lineHeight: 1.7, maxWidth: "28ch" }}>
               Expert mechanics with 55+ years of combined experience. Serving Daventry and the surrounding area.

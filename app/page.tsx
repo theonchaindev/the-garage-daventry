@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import VideoBackground from "@/components/VideoBackground";
+import PartnersCarousel from "@/components/PartnersCarousel";
 
 export const metadata: Metadata = {
   title: "The Garage Daventry | Expert Car Mechanics",
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 const services = [
-  { num: "01", title: "MOTs",            desc: "DVSA-approved MOT testing for all vehicle classes.", img: "/images/site-img1.jpg" },
+  { num: "01", title: "MOTs",            desc: "DVSA-approved Class 4 MOT testing — cars & light vans.", img: "/images/site-img1.jpg" },
   { num: "02", title: "Servicing",       desc: "Interim and full vehicle services, all makes and models.", img: "/images/site-servicing.jpg" },
   { num: "03", title: "EV & Hybrid",     desc: "Specialist electric and hybrid vehicle care.", img: "/images/site-ev.jpg" },
   { num: "04", title: "Diagnostics",     desc: "Bosch and Snap-On equipment — fast, accurate fault finding.", img: "/images/site-diagnostics.jpg" },
@@ -23,7 +24,7 @@ export default function Home() {
       {/* ── HERO ── */}
       <section style={{ position: "relative", minHeight: "90vh", display: "flex", alignItems: "flex-end", overflow: "hidden" }}>
         <VideoBackground />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(160deg, rgba(0,58,115,0.82) 0%, rgba(0,42,85,0.9) 50%, rgba(0,0,0,0.85) 100%)" }} />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(160deg, rgba(10,10,10,0.82) 0%, rgba(0,0,0,0.88) 50%, rgba(0,0,0,0.85) 100%)" }} />
 
         <div className="wrap r-hero-pad" style={{ position: "relative", zIndex: 2, paddingTop: "6rem", paddingBottom: "6rem", width: "100%" }}>
           <div className="r-hero" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "flex-end" }}>
@@ -54,6 +55,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── PARTNERS ── */}
+      <PartnersCarousel />
 
       {/* ── ABOUT SNIPPET ── */}
       <section className="bg-white section">
@@ -147,7 +151,7 @@ export default function Home() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/images/site-workshop.jpg"
           alt="Workshop" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 30%" }} />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(0,58,115,0.95) 0%, rgba(0,58,115,0.7) 60%, rgba(0,0,0,0.3) 100%)" }} />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.3) 100%)" }} />
         <div className="wrap r-cta" style={{ position: "relative", zIndex: 2, width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "3rem", flexWrap: "wrap" }}>
           <div>
             <div className="eyebrow eyebrow-white" data-anim="slide-left">Get in Touch</div>

@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --brand:        #003A73;
-  --brand-dark:   #002a55;
-  --brand-light:  #004d99;
+  --brand:        #0a0a0a;
+  --brand-dark:   #000000;
+  --brand-light:  #1f1f1f;
   --accent:       #f2563a;
   --accent-dark:  #d93e24;
   --black:        #0a0a0a;
@@ -176,8 +176,8 @@ h6 { font-size: 0.875rem; font-weight: 600; line-height: 1.5; letter-spacing: 0.
   :root { --section-y: 3rem; }
 
   /* Navbar */
-  .nav-wrap     { height: 90px !important; }
-  .nav-logo-img { height: 72px !important; width: auto !important; }
+  .nav-wrap     { height: 108px !important; }
+  .nav-logo-img { height: 92px !important; width: auto !important; }
 
   /* Hero grid → single column */
   .r-hero     { grid-template-columns: 1fr !important; gap: 2rem !important; }

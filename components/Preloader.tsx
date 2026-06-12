@@ -40,9 +40,9 @@ export default function Preloader() {
           <Image
             src={LOGO}
             alt="The Garage Daventry"
-            width={120}
-            height={120}
-            style={{ objectFit: "contain", width: 110, height: "auto" }}
+            width={200}
+            height={200}
+            style={{ objectFit: "contain", width: 180, height: "auto" }}
             priority
             unoptimized
           />

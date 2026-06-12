@@ -30,7 +30,8 @@ export default function ContactPage() {
               <h3 data-anim="fade-up" style={{ color: "var(--dark)", marginBottom: "2.5rem" }}>Contact Information</h3>
 
               {[
-                { label: "Phone",   val: "01327 349181",             href: "tel:01327349181",                   sub: "Mon–Fri 8:30–17:00" },
+                { label: "Phone",    val: "01327 349181",             href: "tel:01327349181",                   sub: "Mon–Fri 8:30–17:00" },
+                { label: "WhatsApp", val: "Message us on WhatsApp",   href: "https://wa.me/441327349181",        sub: "Quick replies during opening hours" },
                 { label: "Email",   val: "info@thegaragedaventry.com", href: "mailto:info@thegaragedaventry.com", sub: "We aim to reply within 2 hours" },
                 { label: "Address", val: "High March, Daventry",     href: null as null,                        sub: "Northamptonshire, NN11" },
               ].map((item, i) => (

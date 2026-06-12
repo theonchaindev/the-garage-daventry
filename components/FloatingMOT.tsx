@@ -1,7 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
 
-export default function FloatingCall() {
+const WHATSAPP_URL = "https://wa.me/441327349181?text=Hi%2C%20I%27d%20like%20to%20book%20my%20vehicle%20in.";
+
+export default function FloatingContact() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -9,46 +11,52 @@ export default function FloatingCall() {
     return () => clearTimeout(t);
   }, []);
 
+  const baseStyle = (delay: string): React.CSSProperties => ({
+    display: "flex",
+    alignItems: "center",
+    gap: "0.6rem",
+    color: "#fff",
+    padding: "0.875rem 1.375rem",
+    borderRadius: "9999px",
+    textDecoration: "none",
+    transform: visible ? "scale(1) translateY(0)" : "scale(0.7) translateY(24px)",
+    opacity: visible ? 1 : 0,
+    transition: `transform 0.5s cubic-bezier(0.34,1.56,0.64,1) ${delay}, opacity 0.4s ease ${delay}, filter 0.2s`,
+    fontWeight: 700,
+    fontSize: "0.875rem",
+    letterSpacing: "-0.01em",
+    whiteSpace: "nowrap",
+  });
+
   return (
-    <a
-      href="tel:01327349181"
-      style={{
-        position: "fixed",
-        bottom: "1.75rem",
-        right: "1.75rem",
-        zIndex: 90,
-        display: "flex",
-        alignItems: "center",
-        gap: "0.6rem",
-        background: "var(--accent)",
-        color: "#fff",
-        padding: "0.875rem 1.375rem",
-        borderRadius: "9999px",
-        textDecoration: "none",
-        boxShadow: "0 4px 24px rgba(242,86,58,0.45)",
-        transform: visible ? "scale(1) translateY(0)" : "scale(0.7) translateY(24px)",
-        opacity: visible ? 1 : 0,
-        transition: "transform 0.5s cubic-bezier(0.34,1.56,0.64,1), opacity 0.4s ease, background 0.2s",
-        fontWeight: 700,
-        fontSize: "0.875rem",
-        letterSpacing: "-0.01em",
-        whiteSpace: "nowrap",
-      }}
-      onMouseEnter={e => {
-        e.currentTarget.style.background = "var(--accent-dark)";
-        e.currentTarget.style.boxShadow = "0 6px 32px rgba(242,86,58,0.55)";
-        e.currentTarget.style.transform = "scale(1.05) translateY(-2px)";
-      }}
-      onMouseLeave={e => {
-        e.currentTarget.style.background = "var(--accent)";
-        e.currentTarget.style.boxShadow = "0 4px 24px rgba(242,86,58,0.45)";
-        e.currentTarget.style.transform = "scale(1) translateY(0)";
-      }}
-    >
-      <svg width="17" height="17" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
-        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.05 1.22 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-      </svg>
-      01327 349181
-    </a>
+    <div style={{ position: "fixed", bottom: "1.75rem", right: "1.75rem", zIndex: 90, display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "0.75rem" }}>
+      {/* WhatsApp */}
+      <a
+        href={WHATSAPP_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ ...baseStyle("0.1s"), background: "#25D366", boxShadow: "0 4px 24px rgba(37,211,102,0.45)" }}
+        onMouseEnter={e => { e.currentTarget.style.filter = "brightness(0.92)"; }}
+        onMouseLeave={e => { e.currentTarget.style.filter = "none"; }}
+      >
+        <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        WhatsApp
+      </a>
+
+      {/* Call */}
+      <a
+        href="tel:01327349181"
+        style={{ ...baseStyle("0s"), background: "var(--accent)", boxShadow: "0 4px 24px rgba(242,86,58,0.45)" }}
+        onMouseEnter={e => { e.currentTarget.style.filter = "brightness(0.92)"; }}
+        onMouseLeave={e => { e.currentTarget.style.filter = "none"; }}
+      >
+        <svg width="17" height="17" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.05 1.22 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+        01327 349181
+      </a>
+    </div>
   );
 }

@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 const services = [
   {
     num: "01", title: "MOTs",
-    desc: "Our DVSA-approved MOT testing covers all vehicle classes. We clearly explain any failures or advisories and can carry out remedial work the same day where possible.",
+    desc: "Our DVSA-approved MOT testing covers Class 4 vehicles — cars and light vans. Please note we do not test Class 7 vehicles. We clearly explain any failures or advisories and can carry out remedial work the same day where possible.",
     img: "/images/site-img1.jpg",
-    includes: ["Visual safety inspection", "Lights & signalling check", "Steering & suspension", "Emissions testing", "Brakes & tyres", "Same-day remedials available"],
+    includes: ["Class 4 vehicles only", "Visual safety inspection", "Lights & signalling check", "Steering & suspension", "Emissions testing", "Same-day remedials available"],
     from: "From £54.85",
   },
   {
@@ -44,10 +44,10 @@ const services = [
     from: "From £79",
   },
   {
-    num: "06", title: "Clutch Replacements",
-    desc: "Clutch repair and replacement for classic and modern vehicles. Our experienced mechanics will get you back on the road quickly and reliably.",
+    num: "06", title: "Clutch & Cambelt Replacements",
+    desc: "Clutch and cambelt repair and replacement for classic and modern vehicles. Our experienced mechanics will get you back on the road quickly and reliably.",
     img: "/images/site-img4.jpg",
-    includes: ["Clutch plate replacement", "Pressure plate replacement", "Flywheel inspection & skim", "Release bearing replacement", "Dual-mass flywheel", "Road test on completion"],
+    includes: ["Clutch plate replacement", "Pressure plate replacement", "Cambelt & timing belt kits", "Water pump replacement", "Dual-mass flywheel", "Road test on completion"],
     from: "From £299",
   },
   {
