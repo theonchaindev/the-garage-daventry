@@ -21,8 +21,8 @@ export default function Footer() {
             </p>
             <div style={{ marginTop: "1.5rem", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
               <a href="tel:01327349181" style={{ color: "rgba(255,255,255,0.55)", fontSize: "0.85rem" }}>01327 349181</a>
-              <a href="mailto:info@thegaragedaventry.com" style={{ color: "rgba(255,255,255,0.55)", fontSize: "0.85rem" }}>info@thegaragedaventry.com</a>
-              <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.8rem" }}>High March, Daventry, NN11</p>
+              <a href="mailto:info@thegaragedav.com" style={{ color: "rgba(255,255,255,0.55)", fontSize: "0.85rem" }}>info@thegaragedav.com</a>
+              <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.8rem" }}>30 High March, Daventry, NN11 4HB</p>
             </div>
           </div>
 

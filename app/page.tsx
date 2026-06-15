@@ -14,7 +14,7 @@ const services = [
   { num: "02", title: "Servicing",       desc: "Interim and full vehicle services, all makes and models.", img: "/images/site-servicing.jpg" },
   { num: "03", title: "EV & Hybrid",     desc: "Specialist electric and hybrid vehicle care.", img: "/images/site-ev.jpg" },
   { num: "04", title: "Diagnostics",     desc: "Bosch and Snap-On equipment — fast, accurate fault finding.", img: "/images/site-diagnostics.jpg" },
-  { num: "05", title: "Brake Repairs",   desc: "Pads, discs, callipers and fluid for all vehicles.", img: "/images/site-img2.jpg" },
+  { num: "05", title: "Brake Repairs",   desc: "Pads, discs, callipers and fluid for all vehicles.", img: "/images/brakes.jpg" },
   { num: "06", title: "Air Conditioning",desc: "Re-gas, leak testing and full AC system service.", img: "/images/site-mechanic.jpg" },
 ];
 

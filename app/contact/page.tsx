@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Contact | The Garage Daventry",
-  description: "Contact The Garage Daventry. Call 01327 349181 or email us. High March, Daventry, NN11.",
+  description: "Contact The Garage Daventry. Call 01327 349181 or email info@thegaragedav.com. 30 High March, Daventry, NN11 4HB.",
 };
 
 export default function ContactPage() {
@@ -32,8 +32,8 @@ export default function ContactPage() {
               {[
                 { label: "Phone",    val: "01327 349181",             href: "tel:01327349181",                   sub: "Mon–Fri 8:30–17:00" },
                 { label: "WhatsApp", val: "Message us on WhatsApp",   href: "https://wa.me/441327349181",        sub: "Quick replies during opening hours" },
-                { label: "Email",   val: "info@thegaragedaventry.com", href: "mailto:info@thegaragedaventry.com", sub: "We aim to reply within 2 hours" },
-                { label: "Address", val: "High March, Daventry",     href: null as null,                        sub: "Northamptonshire, NN11" },
+                { label: "Email",   val: "info@thegaragedav.com", href: "mailto:info@thegaragedav.com", sub: "We aim to reply within 2 hours" },
+                { label: "Address", val: "30 High March, Daventry",  href: null as null,                        sub: "NN11 4HB" },
               ].map((item, i) => (
                 <div key={item.label} data-anim="fade-up" data-delay={`${0.05 + i * 0.1}`}
                   style={{ marginBottom: "2rem", paddingBottom: "2rem", borderBottom: "1px solid var(--border)" }}>

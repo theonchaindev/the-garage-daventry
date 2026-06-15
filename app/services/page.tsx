@@ -39,7 +39,7 @@ const services = [
   {
     num: "05", title: "Brake Repairs",
     desc: "Full brake inspection and replacement of pads, discs, callipers and fluid as required. We work with all vehicle types using quality parts.",
-    img: "/images/site-img2.jpg",
+    img: "/images/brakes.jpg",
     includes: ["Brake pad replacement", "Disc & drum replacement", "Calliper overhaul", "Brake fluid flush", "Handbrake adjustment", "ABS sensor inspection"],
     from: "From £79",
   },
