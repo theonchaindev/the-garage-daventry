@@ -64,7 +64,7 @@ export default function Home() {
         <div className="wrap">
           <div className="r-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center" }}>
             <div data-anim="scale-in" style={{ position: "relative", aspectRatio: "4/3", borderRadius: "var(--radius)", overflow: "hidden" }}>
-              <Image src="/images/site-img3.jpg"
+              <Image src="/images/site-img1.jpg"
                 alt="Mechanics at The Garage Daventry" fill unoptimized style={{ objectFit: "cover" }} />
               <div style={{ position: "absolute", bottom: "1.5rem", left: "1.5rem", background: "var(--brand)", color: "#fff", padding: "1rem 1.5rem", borderRadius: "0.5rem" }}>
                 <div style={{ fontSize: "2rem", fontWeight: 700, letterSpacing: "-0.04em", lineHeight: 1, color: "var(--accent)" }}>55+</div>
