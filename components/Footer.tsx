@@ -46,7 +46,6 @@ export default function Footer() {
             <div style={{ display: "flex", flexDirection: "column", gap: "0.625rem" }}>
               {[
                 { href: "/about", label: "About Us" },
-                { href: "/projects", label: "Projects" },
                 { href: "/contact", label: "Contact" },
               ].map(l => (
                 <Link key={l.href} href={l.href} style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.85rem", transition: "color 0.15s" }}
